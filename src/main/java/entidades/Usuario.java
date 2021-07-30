@@ -33,23 +33,20 @@ public class Usuario {
         @NotNull(message = "CEP não pode ser vazia")
         private String CEP;
 
-    //Construtor vazio, com parâmetros e os getters e setters
-
-
-
-/*
         @OneToMany(cascade = CascadeType.ALL)
         @JoinColumn(name="usuario_id")
         private List<Endereco> endereco;
 
-        */
+
+    //Construtor vazio, com parâmetros e os getters e setters
+
 
 
 
     public Usuario() {
         super();
     }
-/*
+
 
     public Usuario(@NotNull(message = "Nome não pode ser vazio") String nome,
                    @NotNull(message = "Email não pode ser vazio")  String email,
@@ -62,10 +59,10 @@ public class Usuario {
         this.cpf = cpf;
         this.email = email;
         this.dataNascimento = dataNascimento;
-        //this.endereco = endereco;
+        this.endereco = endereco;
         this.CEP = CEP;
     }
-*/
+
 
 
 
@@ -83,13 +80,13 @@ public class Usuario {
         CEP = cEP;
     }
 
-    /*public List<Endereco> getEndereco() {
+    public List<Endereco> getEndereco() {
         return endereco;
     }
 
     public void setEndereco(List<Endereco> endereco) {
         this.endereco = endereco;
-    }*/
+    }
 
     public String getNome() {
         return nome;
