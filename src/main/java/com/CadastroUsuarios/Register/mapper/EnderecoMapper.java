@@ -1,7 +1,7 @@
-package mapper;
+package com.CadastroUsuarios.Register.mapper;
 
-import dto.EnderecoDTO;
-import entidades.Endereco;
+import com.CadastroUsuarios.Register.dto.EnderecoDTO;
+import com.CadastroUsuarios.Register.entidades.Endereco;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

@@ -1,4 +1,4 @@
-package entidades;
+package com.CadastroUsuarios.Register.entidades;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,0 +1,78 @@
+package com.CadastroUsuarios.Register.form;
+
+import com.CadastroUsuarios.Register.entidades.Endereco;
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import java.util.List;
+
+public class UsuarioForm {
+
+
+    @NotNull
+    @NotEmpty
+    @Length(min = 5)
+    private String nome;
+    @NotNull @NotEmpty @Length(min = 10)
+    private String cpf;
+    @NotNull @NotEmpty
+    private String email;
+    @NotNull @NotEmpty
+    private String dataNascimento;
+
+    @NotNull @NotEmpty
+    private String CEP;
+
+    private List<Endereco> endereco;
+
+    public UsuarioForm() {
+    }
+
+    public UsuarioForm(String nome, String cpf, String email, String dataNascimento, String CEP, List<Endereco> endereco) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
+        this.dataNascimento = dataNascimento;
+        this.CEP = CEP;
+        this.endereco = endereco;
+    }
+
+    public List<Endereco> getEndereco() {
+        return endereco;
+    }
+    public void setEndereco(List<Endereco> endereco) {
+        this.endereco = endereco;
+    }
+    public String getCEP() {
+        return CEP;
+    }
+    public void setCEP(String cEP) {
+        CEP = cEP;
+    }
+    public String getNome() {
+        return nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    public String getCpf() {
+        return cpf;
+    }
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public String getDataNascimento() {
+        return dataNascimento;
+    }
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+}

@@ -5,12 +5,12 @@ package com.CadastroUsuarios.Register;
 
 
 
-import dto.EnderecoDTO;
-import dto.UsuarioDTO;
-import entidades.Endereco;
-import entidades.Usuario;
-import mapper.EnderecoMapper;
-import mapper.UsuarioMapper;
+import com.CadastroUsuarios.Register.dto.EnderecoDTO;
+import com.CadastroUsuarios.Register.dto.UsuarioDTO;
+import com.CadastroUsuarios.Register.entidades.Endereco;
+import com.CadastroUsuarios.Register.entidades.Usuario;
+import com.CadastroUsuarios.Register.mapper.EnderecoMapper;
+import com.CadastroUsuarios.Register.mapper.UsuarioMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -26,6 +26,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class RegisterApplicationTests {
 
 	private final UsuarioMapper usuarioMapper = UsuarioMapper.INSTANCE;
+
 	private final EnderecoMapper enderecoMapper = EnderecoMapper.INSTANCE;
 
 
@@ -75,10 +76,11 @@ class RegisterApplicationTests {
 
 		UsuarioDTO usuarioDTO =  usuarioMapper.toDTO(usuario);
 
-		assertEquals(usuarioDTO.getNome(),"Iago" );
-		assertEquals(usuarioDTO.getEmail(), "iagoaguiar202@gmail.com");
-		assertEquals(usuarioDTO.getCpf(),  "188.965.698-63" );
-		assertEquals(usuarioDTO.getDataNascimento(), "18/09/1993" );
+
+		assertEquals(usuarioDTO.getNome(),usuario.getNome() );
+		assertEquals(usuarioDTO.getEmail(), usuario.getEmail());
+		assertEquals(usuarioDTO.getCpf(),  usuario.getCpf());
+		assertEquals(usuarioDTO.getDataNascimento(), usuario.getDataNascimento() );
 	}
 
 	@Test
@@ -87,11 +89,11 @@ class RegisterApplicationTests {
 		EnderecoDTO enderecoDTO = enderecoMapper.toDTO(endereco);
 
 
-		assertEquals(enderecoDTO.getNome(), "Rua Teotonio da Fonseca");
-		assertEquals(enderecoDTO.getNumero(), 21);
-		assertEquals(enderecoDTO.getComplemento(), "casa");
-		assertEquals(enderecoDTO.getBairro(), "Capão Redondo");
-		assertEquals(enderecoDTO.getCidade(), "Rio de Janeiro");
-		assertEquals(enderecoDTO.getCEP(), "123456789");
+		assertEquals(enderecoDTO.getNome(), endereco.getNome());
+		assertEquals(enderecoDTO.getNumero(), endereco.getNumero());
+		assertEquals(enderecoDTO.getComplemento(), endereco.getComplemento());
+		assertEquals(enderecoDTO.getBairro(), endereco.getBairro());
+		assertEquals(enderecoDTO.getCidade(), endereco.getCidade());
+		assertEquals(enderecoDTO.getCEP(), endereco.getCEP());
 	}
 }
