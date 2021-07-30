@@ -9,10 +9,15 @@ import com.CadastroUsuarios.Register.dto.EnderecoDTO;
 import com.CadastroUsuarios.Register.dto.UsuarioDTO;
 import com.CadastroUsuarios.Register.entidades.Endereco;
 import com.CadastroUsuarios.Register.entidades.Usuario;
+import com.CadastroUsuarios.Register.form.UsuarioForm;
 import com.CadastroUsuarios.Register.mapper.EnderecoMapper;
 import com.CadastroUsuarios.Register.mapper.UsuarioMapper;
+import com.CadastroUsuarios.Register.repository.UsuarioRepository;
+import com.CadastroUsuarios.Register.service.UsuarioService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -28,6 +33,13 @@ class RegisterApplicationTests {
 	private final UsuarioMapper usuarioMapper = UsuarioMapper.INSTANCE;
 
 	private final EnderecoMapper enderecoMapper = EnderecoMapper.INSTANCE;
+
+	@Mock
+	private UsuarioRepository usuarioRepository;
+
+
+	@InjectMocks
+	private UsuarioService usuarioService;
 
 
 	@Test
@@ -95,5 +107,26 @@ class RegisterApplicationTests {
 		assertEquals(enderecoDTO.getBairro(), endereco.getBairro());
 		assertEquals(enderecoDTO.getCidade(), endereco.getCidade());
 		assertEquals(enderecoDTO.getCEP(), endereco.getCEP());
+	}
+
+	@Test
+	void testeCadastro()  {
+		Usuario usuario = new Usuario("Iago", "188.965.698-63",  "iagoaguiar202@gmail.com", "18/09/1993", "516161351");
+		UsuarioDTO usuarioDTOesperado = new UsuarioDTO(usuario);
+		Usuario usuarioEsperadoSalvo = usuarioMapper.toModel(usuarioDTOesperado);
+		UsuarioForm usuarioForm = new UsuarioForm(usuario.getNome(),
+				usuario.getCpf(),
+				usuario.getEmail(),
+				usuario.getDataNascimento(),
+				usuario.getCEP(),
+				usuario.getEndereco()
+				);
+
+
+		assertEquals(usuarioService.cadastrar(usuarioForm).getNome(), usuarioDTOesperado.getNome());
+		assertEquals(usuarioService.cadastrar(usuarioForm).getCpf(), usuarioDTOesperado.getCpf());
+		assertEquals(usuarioService.cadastrar(usuarioForm).getEmail(), usuarioDTOesperado.getEmail());
+		assertEquals(usuarioEsperadoSalvo.getNome(), usuarioDTOesperado.getNome());
+
 	}
 }

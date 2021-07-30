@@ -1,6 +1,8 @@
 package com.CadastroUsuarios.Register.form;
 
 import com.CadastroUsuarios.Register.entidades.Endereco;
+import com.CadastroUsuarios.Register.entidades.Usuario;
+import com.CadastroUsuarios.Register.repository.UsuarioRepository;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotEmpty;
@@ -8,8 +10,6 @@ import javax.validation.constraints.NotNull;
 import java.util.List;
 
 public class UsuarioForm {
-
-
     @NotNull
     @NotEmpty
     @Length(min = 5)
@@ -25,6 +25,9 @@ public class UsuarioForm {
     private String CEP;
 
     private List<Endereco> endereco;
+
+    //Construtor vazio, com parâmetros e os getters e setters
+
 
     public UsuarioForm() {
     }
@@ -75,4 +78,8 @@ public class UsuarioForm {
         this.dataNascimento = dataNascimento;
     }
 
+    public Usuario converter(UsuarioRepository usuariosRepository) {
+        return new Usuario( nome,  email ,cpf, dataNascimento, endereco, CEP);
+
+    }
 }
