@@ -1,6 +1,4 @@
-package dto;
-
-import entidades.Usuario;
+package com.CadastroUsuarios.Register.dto;
 
 public class UsuarioDTO {
 

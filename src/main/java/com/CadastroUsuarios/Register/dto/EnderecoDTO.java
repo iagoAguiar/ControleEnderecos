@@ -1,6 +1,6 @@
-package dto;
+package com.CadastroUsuarios.Register.dto;
 
-import entidades.Endereco;
+import com.CadastroUsuarios.Register.entidades.Endereco;
 
 public class EnderecoDTO {
 

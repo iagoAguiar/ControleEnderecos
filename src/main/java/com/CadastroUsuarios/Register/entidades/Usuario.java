@@ -1,8 +1,4 @@
-package entidades;
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+package com.CadastroUsuarios.Register.entidades;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

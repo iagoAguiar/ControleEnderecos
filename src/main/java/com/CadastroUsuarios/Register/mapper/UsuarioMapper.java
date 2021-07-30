@@ -1,7 +1,8 @@
-package mapper;
+package com.CadastroUsuarios.Register.mapper;
 
-import dto.UsuarioDTO;
-import entidades.Usuario;
+import com.CadastroUsuarios.Register.dto.UsuarioDTO;
+import com.CadastroUsuarios.Register.entidades.Usuario;
+import com.CadastroUsuarios.Register.form.UsuarioForm;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -13,4 +14,7 @@ public interface UsuarioMapper {
     Usuario toModel(UsuarioDTO dto);
 
     UsuarioDTO toDTO(Usuario usuario);
+
+    UsuarioDTO toModel(UsuarioForm usuarioForm);
+
 }

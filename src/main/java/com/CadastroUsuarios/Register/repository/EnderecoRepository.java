@@ -1,7 +1,7 @@
-package repository;
+package com.CadastroUsuarios.Register.repository;
 
 
-import entidades.Endereco;
+import com.CadastroUsuarios.Register.entidades.Endereco;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
