@@ -1,5 +1,7 @@
 package com.CadastroUsuarios.Register.dto;
 
+import com.CadastroUsuarios.Register.entidades.Usuario;
+
 public class UsuarioDTO {
 
 
@@ -28,7 +30,7 @@ public class UsuarioDTO {
         this.data = data;
         this.CEP = CEP;
     }
-/*
+
     public UsuarioDTO(Usuario usuario) {
 		this.id = usuario.getId();
 		this.nome = usuario.getNome();
@@ -37,7 +39,7 @@ public class UsuarioDTO {
 		this.email = usuario.getEmail();
 		this.CEP = usuario.getCEP();
 	}
-*/
+
 
 
 
