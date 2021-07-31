@@ -23,10 +23,10 @@ public class UsuarioComEnderecoService {
     }
 
     public ResponseEntity<UsuarioEnderecoDTO> enderecosDoUsuario(@PathVariable Long id){
-        Optional<Usuario> usuarioOPptional = usuarioRepository.findById(id);
+        Optional<Usuario> usuarioOpptional = usuarioRepository.findById(id);
 
-        if(usuarioOPptional.isPresent()) {
-            UsuarioEnderecoDTO usuarioDTO = new UsuarioEnderecoDTO(usuarioOPptional.get());
+        if(usuarioOpptional.isPresent()) {
+            UsuarioEnderecoDTO usuarioDTO = new UsuarioEnderecoDTO(usuarioOpptional.get());
             return ResponseEntity.ok(usuarioDTO);
 
         }else {
