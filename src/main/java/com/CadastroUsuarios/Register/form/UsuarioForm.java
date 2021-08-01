@@ -5,18 +5,23 @@ import com.CadastroUsuarios.Register.entidades.Usuario;
 import com.CadastroUsuarios.Register.repository.UsuarioRepository;
 import org.hibernate.validator.constraints.Length;
 
+import javax.persistence.Column;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
+@Table(uniqueConstraints={@UniqueConstraint(columnNames={"cpf", "email"})})
 public class UsuarioForm {
     @NotNull
     @NotEmpty
-    @Length(min = 5)
     private String nome;
     @NotNull @NotEmpty @Length(min = 10)
+    @Column(unique = true)
     private String cpf;
     @NotNull @NotEmpty
+    @Column(unique = true)
     private String email;
     @NotNull @NotEmpty
     private String dataNascimento;
