@@ -15,7 +15,6 @@
 	<description>Projeto de cadastro de usuarios</description>
 	<properties>
 		<java.version>11</java.version>
-		<spring.cloud-version>Hoxton.SR8</spring.cloud-version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -28,8 +27,11 @@
 		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-openfeign -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-feign</artifactId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+			<version>3.0.3</version>
 		</dependency>
+
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

@@ -2,11 +2,12 @@ package com.CadastroUsuarios.Register.controller;
 
 
 import com.CadastroUsuarios.Register.dto.EnderecoDTO;
+import com.CadastroUsuarios.Register.dto.EnderecoPeloCepDTO;
 import com.CadastroUsuarios.Register.entidades.Endereco;
 import com.CadastroUsuarios.Register.form.EnderecoForm;
-import com.CadastroUsuarios.Register.repository.EnderecoRepository;
+
 import com.CadastroUsuarios.Register.service.EnderecoService;
-import com.CadastroUsuarios.Register.viaCEP.ViaCEPClient;
+import com.CadastroUsuarios.Register.service.ViaCepService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -24,15 +25,14 @@ public class EnderecoController {
 
     EnderecoService enderecoService;
 
-    ViaCEPClient viaCEPClient;
+    ViaCepService viaCepService;
 
-    private EnderecoRepository enderecoRepository;
+
 
     @Autowired
-    public EnderecoController(EnderecoService enderecoService, EnderecoRepository enderecoRepository,ViaCEPClient viaCEPClient) {
+    public EnderecoController(EnderecoService enderecoService, ViaCepService viaCepService ) {
         this.enderecoService = enderecoService;
-        this.enderecoRepository = enderecoRepository;
-        this.viaCEPClient =viaCEPClient;
+        this.viaCepService = viaCepService;
     }
 
     @GetMapping
@@ -40,6 +40,8 @@ public class EnderecoController {
         return enderecoService.lista();
     }
 
+/*
+    Método antigo de cadastro
 
     @PostMapping
     @Transactional
@@ -47,12 +49,16 @@ public class EnderecoController {
         return enderecoService.cadastrar(enderecoForm, uriBuilder);
     }
 
-    @GetMapping("/{cep}")
-    public Endereco enderecoPorCEP(@PathVariable String cep){
-        return viaCEPClient.buscaEnderecoPor(cep);
+*/
+
+    @PostMapping
+    @Transactional
+    public ResponseEntity<EnderecoDTO> cadastrar(@RequestBody @Valid EnderecoPeloCepDTO enderecoPeloCepDTO, UriComponentsBuilder uriBuilder){
+
+        return viaCepService.cadastrarPorCep(enderecoPeloCepDTO,uriBuilder);
     }
-
-
-
-
 }
+
+
+
+
