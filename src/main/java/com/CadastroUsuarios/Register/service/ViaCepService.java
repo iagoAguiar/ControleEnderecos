@@ -4,13 +4,11 @@ import com.CadastroUsuarios.Register.dto.EnderecoDTO;
 import com.CadastroUsuarios.Register.dto.EnderecoPeloCepDTO;
 import com.CadastroUsuarios.Register.entidades.Endereco;
 import com.CadastroUsuarios.Register.mapper.EnderecoMapper;
-import com.CadastroUsuarios.Register.mapper.UsuarioMapper;
 import com.CadastroUsuarios.Register.repository.EnderecoRepository;
-import com.CadastroUsuarios.Register.viaCEP.ViaCEPClient;
+import com.CadastroUsuarios.Register.viaCEP.ViaCepClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
@@ -18,7 +16,7 @@ import java.net.URI;
 @Service
 public class ViaCepService {
 
-    ViaCEPClient viaCEPClient;
+    ViaCepClient viaCEPClient;
 
     private EnderecoRepository enderecoRepository;
 
@@ -26,7 +24,7 @@ public class ViaCepService {
 
 
     @Autowired
-    public ViaCepService(ViaCEPClient viaCEPClient, EnderecoRepository enderecoRepository) {
+    public ViaCepService(ViaCepClient viaCEPClient, EnderecoRepository enderecoRepository) {
         this.viaCEPClient = viaCEPClient;
         this.enderecoRepository = enderecoRepository;
     }
