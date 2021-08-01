@@ -61,7 +61,6 @@ public class Endereco {
 
 
 
-
     public String getNome() {
         return nome;
     }
