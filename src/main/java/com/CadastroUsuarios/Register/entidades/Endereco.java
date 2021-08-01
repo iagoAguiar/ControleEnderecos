@@ -44,6 +44,7 @@ public class Endereco {
 
 
 
+
     public Endereco(@NotNull(message = "Nome não pode ser vazio") String nome, int numero,
                     @NotNull(message = "Complemento não pode ser vazio") String complemento,
                     @NotNull(message = "Bairro não pode ser vazia") String bairro,

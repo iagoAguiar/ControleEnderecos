@@ -1,5 +1,6 @@
 package com.CadastroUsuarios.Register.viaCEP;
 
+import com.CadastroUsuarios.Register.dto.EnderecoPeloCepDTO;
 import com.CadastroUsuarios.Register.entidades.Endereco;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
@@ -11,5 +12,5 @@ public interface ViaCEPClient {
 
 
     @GetMapping("{cep}/json")
-    Endereco buscaEnderecoPor(@PathVariable("cep") String cep);
+    EnderecoPeloCepDTO buscaEnderecoPor(@PathVariable("cep") String cep);
 }

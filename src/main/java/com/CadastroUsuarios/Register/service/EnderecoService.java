@@ -35,6 +35,8 @@ public class EnderecoService {
 
 
 
+    //Método antigo de cadastro
+    @Deprecated
     public ResponseEntity<EnderecoDTO> cadastrar(EnderecoForm enderecoForm , UriComponentsBuilder uriBuilder){
 
         Endereco endereco = enderecoForm.converter(enderecoRepository);
