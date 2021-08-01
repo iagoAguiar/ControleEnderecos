@@ -53,8 +53,8 @@ public class EnderecoController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity<EnderecoDTO> cadastrar(@RequestBody @Valid EnderecoPeloCepDTO enderecoPeloCepDTO, UriComponentsBuilder uriBuilder){
-
+    public ResponseEntity<EnderecoDTO> cadastrar(@RequestBody @Valid EnderecoPeloCepDTO enderecoPeloCepDTO,
+                                                 UriComponentsBuilder uriBuilder){
         return viaCepService.cadastrarPorCep(enderecoPeloCepDTO,uriBuilder);
     }
 }

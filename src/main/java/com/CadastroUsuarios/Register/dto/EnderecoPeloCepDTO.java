@@ -4,7 +4,6 @@ import javax.validation.constraints.NotNull;
 
 public class EnderecoPeloCepDTO {
 
-
     private String CEP;
     private String logradouro;
     private String complemento;
@@ -12,6 +11,11 @@ public class EnderecoPeloCepDTO {
     private String localidade;
     private String uf;
     private int numero;
+
+    //getters e setters
+
+
+
 
     public String getCEP() {
         return CEP;
