@@ -5,6 +5,9 @@ Este código foi criado concomitante com um artigo, o programa está no Heroku a
 https://controle-enderecos.herokuapp.com/
 https://controle-enderecos.herokuapp.com/enderecos
 https://controle-enderecos.herokuapp.com/usuarios
+https://controle-enderecos.herokuapp.com/usuario/{id}
+
+id = id do usuario
 ```
 
 
