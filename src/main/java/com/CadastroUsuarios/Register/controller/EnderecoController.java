@@ -8,6 +8,8 @@ import com.CadastroUsuarios.Register.form.EnderecoForm;
 
 import com.CadastroUsuarios.Register.service.EnderecoService;
 import com.CadastroUsuarios.Register.service.ViaCepService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -21,6 +23,7 @@ import java.util.List;
 @Controller
 @RestController
 @RequestMapping("/enderecos")
+@Api(value = "Endereco",  tags = { "Endereco" })
 public class EnderecoController {
 
     EnderecoService enderecoService;
@@ -36,23 +39,16 @@ public class EnderecoController {
     }
 
     @GetMapping
+    @ApiOperation(value = "Retonar todos os Endereços",
+            notes = "Este endpoint retorna todos os endereços cadastrados")
     public List<EnderecoDTO> lista(){
         return enderecoService.lista();
     }
 
-/*
-    Método antigo de cadastro
-
     @PostMapping
     @Transactional
-    public ResponseEntity<EnderecoDTO> cadastrar(@RequestBody @Valid EnderecoForm enderecoForm, UriComponentsBuilder uriBuilder) {
-        return enderecoService.cadastrar(enderecoForm, uriBuilder);
-    }
-
-*/
-
-    @PostMapping
-    @Transactional
+    @ApiOperation(value = "Retonar todos os Endereços",
+            notes = "Este endpoint retorna todos os endereços cadastrados")
     public ResponseEntity<EnderecoDTO> cadastrar(@RequestBody @Valid EnderecoPeloCepDTO enderecoPeloCepDTO,
                                                  UriComponentsBuilder uriBuilder){
         return viaCepService.cadastrarPorCep(enderecoPeloCepDTO,uriBuilder);

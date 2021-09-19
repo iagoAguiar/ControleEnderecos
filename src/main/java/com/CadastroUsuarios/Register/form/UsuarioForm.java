@@ -25,7 +25,6 @@ public class UsuarioForm {
     private String email;
     @NotNull @NotEmpty
     private String dataNascimento;
-
     @NotNull @NotEmpty
     private String CEP;
 
