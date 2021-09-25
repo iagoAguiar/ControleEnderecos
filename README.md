@@ -3,9 +3,9 @@
 <p align="center"> O projeto é um sistema de controle de 
 endereços, usando um web service que retornar o endereço, realizando a busca pelo CEP.</p>
 
-<p> Para mais detalhes sobre a implementação do código, existe um artigo publicado sobre esse
-passo a passo</p>
 
+
+### Artigo sobre a implementação do código:
 
 
 <a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@iagoaguiar202/1"><img src="https://github-readme-medium-recent-article.vercel.app/medium/@iagoaguiar202/1" alt="Processo de criação de uma API Rest para controle de endereços">
